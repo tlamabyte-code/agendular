@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, MinLengthValidator } from '@angular/forms';
 import { Daily } from 'src/app/models/daily.model';
+import { DailiesService } from 'src/app/services/dailies.service';
 import { emotionsCollection } from 'src/utils/constants'
 
 @Component({
@@ -14,9 +15,15 @@ export class ActiveDailyCardComponent implements OnInit {
   formDaily!: FormGroup
   emotionsCollection = emotionsCollection
 
+  todayDaily: Daily = {
+    date: '',
+    emotion: '',
+    note: ''
+  }
+
   @Output('nuevoDaily') savedDaily = new EventEmitter<Daily>()
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private dailiesService: DailiesService) {
     this.buildForm()
   }
 
@@ -24,6 +31,13 @@ export class ActiveDailyCardComponent implements OnInit {
       // this.noteField!.valueChanges.subscribe((value) => {
       //   console.log(value)
       // })
+
+
+      this.dailiesService.todayDaily$.subscribe(newDaily =>
+        this.todayDaily = newDaily
+      )
+
+
   }
 
   private buildForm() {
@@ -55,8 +69,13 @@ export class ActiveDailyCardComponent implements OnInit {
   }
 
   saveDaily() {
-    this.savedDaily.emit(this.formDaily.value as Daily)
-  }
 
+    if (this.todayDaily.date === this.today.toString()) {
+      alert("Ya subiste Daily")
+    } else {
+      this.savedDaily.emit(this.formDaily.value as Daily)
+    }
+
+  }
 
 }

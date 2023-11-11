@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Daily } from 'src/app/models/daily.model';
+import { DailiesService } from 'src/app/services/dailies.service';
 
 @Component({
   selector: 'app-daily',
@@ -9,9 +10,11 @@ import { Daily } from 'src/app/models/daily.model';
 export class DailyComponent {
   myDailies: Daily[] = []
 
-  handlerCompletedDaily(daily: Daily): void {
+  constructor(private dailiesService: DailiesService) {
+    this.myDailies = this.dailiesService.getDailies()
+  }
 
-    console.log('reporte hijo')
-    this.myDailies.unshift(daily)
+  handlerCompletedDaily(daily: Daily): void {
+    this.dailiesService.addDaily(daily)
   }
 }

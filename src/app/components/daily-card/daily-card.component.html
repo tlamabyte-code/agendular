@@ -1,1 +1,11 @@
-<p>Daily Registrado</p>
+<div class="daily-card">
+  <div class="header">
+    <span>{{ daily.emotion }}</span>
+    <span>{{ daily.date | date: 'short' }}</span>
+  </div>
+  <div class="resume">
+    <p>
+      {{ daily.note }}
+    </p>
+  </div>
+</div>
