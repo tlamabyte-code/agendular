@@ -1,8 +1,15 @@
 # Agendular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.8.
+Aplicativo/Proyecto de una Agenda Digital en Angular
 
-## Comandos de la Sesión
+## Sesión 4 (Inicio del Desarrollo de Agendular)
 
-`ng g c pages/<nombre_pagina>` Generar una página (componente) -> Vista de una Página
-`ng g c components/<nombre_componente>` Generar un componente -> Reutilizable
+#### Conceptos
+
+* (Pages)[src/app/pages]
+
+
+
+
+<!-- `ng g c pages/<nombre_pagina>` Generar una página (componente) -> Vista de una Página
+`ng g c components/<nombre_componente>` Generar un componente -> Reutilizable -->
