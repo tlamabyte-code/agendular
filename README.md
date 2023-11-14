@@ -19,7 +19,7 @@ Aplicativo/Proyecto de una Agenda Digital en Angular
   Comando de Angular CLI para crear un componente tipo página<br/>
   <strong><code>ng g c pages/&lt;nombre_de_la_pagina&gt;</code></strong> <br/></br>
    * [Pages](src/app/pages) > Durante el proyecto utilizamos esta ubicación para colocar cada una de nuestras vistas en el aplicativo de Agendular </br></br>
-  > Algo importante es mencionar que en realidad una "página" es un componente (@Component), y que solo se esta utilizando esta estrategia para identificarlo como un componente pero que se comporta como una [página](#páginas-en-angular-pages-%EF%B8%8F)
+  > Algo importante es mencionar que en realidad una "página" es un [componente](#ciclo-de-vida-de-componente-) (@Component), y que solo se esta utilizando esta estrategia para identificarlo como un componente pero que se comporta como una [página](#páginas-en-angular-pages-%EF%B8%8F)
 
 ## Ciclo de Vida de Componente 📦📄
 
