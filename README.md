@@ -71,7 +71,7 @@ Aplicativo/Proyecto de una Agenda Digital en Angular
   <mi-componente [mensaje]="Hola Mundo"></mi-componente>
   ```
 
-  * [Ejemplo de Input de Agendular](src/app/components/daily-card.component.ts) > Línea 10
+  * [Ejemplo de Input de Agendular](src/app/components/daily-card/daily-card.component.ts) > Línea 10
 
 ### Decorador @Output 📤
 
@@ -113,8 +113,8 @@ Aplicativo/Proyecto de una Agenda Digital en Angular
   <mi-componente-hijo [miEvento]="manejarEvento()"></mi-componente> <!-- Se espera que en la lógica del padre exista la función/método manejarEvento() -->
   ```
 
-  * [Ejemplo de Output de Agendular](src/app/components/active-daily-card.component.ts) > Línea 31
-  * [Ejemplo de Output de Agendular](src/app/pages/daily.component.html) > Línea 2
+  * [Ejemplo de Output de Agendular](src/app/components/active-daily-card/active-daily-card.component.ts) > Línea 31
+  * [Ejemplo de Output de Agendular](src/app/pages/daily/daily.component.html) > Línea 2
 
 ### Ciclo de Vida de Componente 📦📄
 
@@ -153,7 +153,7 @@ export class MiServicio {
 
   * [Ejemplo de Servicio en Agendular](src/app/services/dailies.service.ts) > Línea 8
   * [Ejemplo de Servicio en Agendular](src/app/services/quotes.service.ts) > Línea 8
-  * [Ejemplo del Uso de Servicio en Agendular](src/app/components/active-daily-card/active-daily-card.components.ts) > Línea 26
+  * [Ejemplo del Uso de Servicio en Agendular](src/app/components/active-daily-card/active-daily-card.component.ts) > Línea 26
 
 ### Modelos en Angular 🧿
 
@@ -260,7 +260,7 @@ La librería `rxjs` es una herramienta que viene en conjunto con Angular y permi
 ```
 
   * [Ejemplo de Servicio con Reactividad](src/app/services/dailies.service.ts) > Línea 23
-  * [Ejemplo del Uso del Observable](src/app/components/active-daily-card.component.ts) > Línea 30
+  * [Ejemplo del Uso del Observable](src/app/components/active-daily-card/active-daily-card.component.ts) > Línea 30
 
 # Módulo HTTPClient de Angular
 
@@ -268,7 +268,7 @@ Módulo que puedes activar/importar en Angular, **simplifica la realización de 
 
 Pasos para activarlo y utilizarlo
 1. Importar el módulo `HttpClientModule` en el módulo principal `app.module.ts`
-  * [Ejemplo en Agedular](src/app/app-module.ts) -> Línea 31
+  * [Ejemplo en Agedular](src/app/app.module.ts) -> Línea 31
 2. Inyección en cualquier lugar que se requiera (por ejemplo: un servicio)
   * [Ejemplo en Agedular](src/app/services/quotes.service.ts) -> Línea 10  
 3. Utilizar el servicio `HttpClient` importado para crear petición
@@ -283,7 +283,7 @@ Módulo que puedes activar/importar en Angular, **simplifica el manejo de formul
 <h4>Ejemplo del Módulo ReactiveForms en Agendular</h4>
 
 1. Importar el módulo `ReactiveFormsModule` en el módulo principal `app.module.ts`
-  * [Ejemplo en Agedular](src/app/app-module.ts) -> Línea 30
+  * [Ejemplo en Agedular](src/app/app.module.ts) -> Línea 30
 2. Revisar el uso de ReactiveForms en el componente `app-active-daily-card`
   * [Ejemplo en Agendular](src/app/components/active-daily-card/active-daily-card.component.ts)
     * Revisar el uso de `FormGroup`
