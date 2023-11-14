@@ -129,12 +129,15 @@ Puedes encontrar más en la documentación de Angular
 
 ### Servicios en Angular (Decorador @Injectable)
 
-**Es una forma de encapsular y modular lógica de negocio en una aplicación**, estos servicios son singleton por defecto en Angular, eso quiere decir que **hay una única instancia del servicio en toda la aplicación** y pueden ser reutilizados
+**Es una forma de encapsular y modular lógica de negocio en una aplicación**, estos servicios son singleton por defecto en Angular, eso quiere decir que **hay una única instancia del servicio en toda la aplicación** y pueden ser inyectados en otros componentes
 
 Los servicios en Angular se pueden identificar con el decorador @Injectable<br/><br/>
 
 Comando de Angular CLI para crear nuevos servicios <br/>
-`ng g s services/<nombre_del_Servicio>` <br/>
+`ng g s services/<nombre_del_servicio>` <br/>
+
+Los servicios se conforman de la siguiente manera:
+  * `*.service.ts` -> (Archivo Typescript que cuenta con la configuración de tu servicio y la clase de su lógica)
 
 <h4>Ejemplo de Servicio</h4>
 
