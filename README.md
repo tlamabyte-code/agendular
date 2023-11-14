@@ -23,8 +23,7 @@ Aplicativo/Proyecto de una Agenda Digital en Angular
 
 ### Componentes en Angular (Components) 📦📄
 
-  Son las piezas de código que permiten fragmentar tu aplicación, el decorador @Component es por el cual Angular reconoce a los componentes de una aplicación, son  
-  recomendables para reutilizarse o simplemente para modular/aislar/separar.
+  Son las piezas de código que permiten fragmentar tu aplicación, el decorador @Component es por el cual Angular reconoce a los componentes de una aplicación, son recomendables para reutilizarse o simplemente para modular/aislar/separar.
   > Ejemplos: [Card, Navbar, Sidebar, ...]
 
   Comando de Angular CLI para crear un componente<br/>
@@ -121,7 +120,7 @@ Aplicativo/Proyecto de una Agenda Digital en Angular
 **Eventos que van sucediendo durante la vida del componente, permiten ejecutar código**. Aquí mencionaré algunos:
 
 - `constructor()`. Función/Bloque se encarga de crear la instancia del componente
-- `ngOnChanges`. Sucede al inicio y queda escuchando cada @Input, puede recibir un objeto SimpleChanges proporciona los cambios de todos los @Inputs con previousValue, firstChange, ...
+- `ngOnChanges`. Sucede al inicio y queda escuchando cada @Input
 - `ngOnInit`. Sucede antes del render (puede ser asíncrono), corre sola una vez
 - `ngAfterViewInit`. Sucede después del render
 - `ngDestroy`. Sucede cuando el componente va a desaparecer del render, aquí se pueden limpiar eventos que pueden quedar despiertos
