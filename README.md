@@ -161,7 +161,7 @@ export class MiServicio {
 
 Estructura de objetos por medio de interfaces, **definen la forma que deben tener los objetos** sin proporcionar una implementación, se utilizan principalmente en **componentes, servicios** o donde se requiera trabajar con la estructura <br/>
 
-<h4>Ejemplo de Servicio</h4>
+<h4>Ejemplo de Modelo</h4>
 
 ```
 export interface Usuario {
