@@ -35,7 +35,9 @@ Puedes encontrar más en la documentación de Angular
 
 ## Decoradores y Modelos de Angular
 
-### Componentes en Angular (Components) 📦📄
+> Los decoradores en Angular permiten definir una funcionalidad/comportamiento que tendrá un objeto (@Component, @Input, @Output, @Injectable, ...)
+
+### Componentes (@Component) 📦📄
 
   Son las piezas de código que permiten fragmentar tu aplicación, el decorador @Component es por el cual Angular reconoce a los componentes de una aplicación, son recomendables para reutilizarse o simplemente para modular/aislar/separar.
   > Ejemplos: [Card, Navbar, Sidebar, ...]
@@ -51,9 +53,7 @@ Puedes encontrar más en la documentación de Angular
   * `*.component.ts` (**Archivo Typescript que cuenta con la configuración de tu componente y la clase de su lógica**)
   * `*.spec.ts` (**Archivo para pruebas unitarias**)
 
-### Decorador @Input 📥
-
-  > Los decoradores en Angular permiten definir una funcionalidad/comportamiento que tendrá un objeto (@Component, @Input, @Output, @Injectable, ...)
+### Inputs (@Input) 📥
 
   El decorador **@Input permite que a un componente poder recibir atributos (valores)**, en ocasiones los componentes necesitan atributos para que suceda un 
   comportamiento o para renderizar (imprimir) información, generalmente el "padre" que esta renderizando al componente es el responsable de mandarle los atributos 
@@ -76,7 +76,6 @@ Puedes encontrar más en la documentación de Angular
 
   }
   ```
-
   
   🟢**Padre**
   Pasarle los datos al @Input del componente en el HTML del Padre `(*.component.html)`<br/>
@@ -86,7 +85,7 @@ Puedes encontrar más en la documentación de Angular
 
   * [Ejemplo de Input de Agendular](src/app/components/daily-card/daily-card.component.ts) > Línea 10
 
-### Decorador @Output 📤
+### Outputs (@Output) 📤
 
   El decorador **@Output permite emitir eventos desde un componente hijo hacia su componente padre (Hijo -> Padre)**, a través de eventos personalizados, un componente 
   hijo **puede notificar al componente padre sobre acciones o cambios en su estado (datos)**
@@ -119,7 +118,6 @@ Puedes encontrar más en la documentación de Angular
   }
   ```
 
-
   🟢**Padre**
   Manejo de evento en el HTML del Padre `(*.component.html)`<br/>
   ```
@@ -130,7 +128,7 @@ Puedes encontrar más en la documentación de Angular
   * [Ejemplo de Output de Agendular](src/app/pages/daily/daily.component.html) > Línea 2
 
 
-### Servicios en Angular (Decorador @Injectable)
+### Servicios (@Injectable)
 
 **Es una forma de encapsular y modular lógica de negocio en una aplicación**, estos servicios son singleton por defecto en Angular, eso quiere decir que **hay una única instancia del servicio en toda la aplicación** y pueden ser inyectados en otros componentes
 
@@ -160,9 +158,9 @@ export class MiServicio {
   * [Ejemplo de Servicio en Agendular](src/app/services/quotes.service.ts) > Línea 8
   * [Ejemplo del Uso de Servicio en Agendular](src/app/components/active-daily-card/active-daily-card.component.ts) > Línea 26
 
-### Modelos en Angular 🧿
+### Modelos (Interfaces de Datos) 🧿
 
-Estructura de objetos por medio de interfaces, **definen la forma que deben tener los objetos** sin proporcionar una implementación, se utilizan principalmente en **componentes, servicios** o donde se requiera trabajar con la estructura <br/>
+Estructura de datos por medio de interfaces, **definen los atributos que deben tener los objetos** sin proporcionar una implementación, se utilizan principalmente en **componentes, servicios** o donde se requiera trabajar con la estructura <br/>
 
 <h4>Ejemplo de Modelo</h4>
 
@@ -175,7 +173,7 @@ export interface Usuario {
 }
 ```
 
-### Pipes en Angular 🧿
+### Pipes (@Pipe) 🧿
 
 Mecanismo que **funciona para transformar datos**, como una especie de tubería con una entrada, transformación y salida.</br>
 **Solo se utilizan en los renderizados (html)** se identifican con el decorador @Pipe 
@@ -209,7 +207,7 @@ export class customPipe implements PipeTransform {
 }
 ```
 
-### Directivas Personalizadas en Angular
+### Directivas Personalizadas (@Directive)
 
 Angular también permite que puedas hacer tus propias directivas, **permiten modificar el DOM de manera directa.** se identifican con el decorador @Directive <br /> 
 
