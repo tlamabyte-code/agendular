@@ -2,15 +2,15 @@
 
 Aplicativo/Proyecto de una Agenda Digital en Angular
 
-## Sesión 4 (Inicio del Desarrollo de Agendular)
+# Sesión 4 (Inicio del Desarrollo de Agendular)
 **Resumen**
 > Hola 👋, aquí puedes encontrar una serie de conceptos y conocimientos que se vieron durante la sesión 4
 
-### Diseño de Aplicación Modular 🧩
+## Diseño de Aplicación Modular 🧩
 
   Práctica que puede aplicar en un aplicativo, consiste en dividir en módulos independientes el aplicativo **(páginas, componentes, servicio, modelos, etc.)**, siempre puedes seguir aplicando la modularidad, esto **facilita el mantenimiento, escalabilidad y colaboración** al momento de estar desarrollando ya sea <u>individual o en equipo</u>.
 
-### Páginas en Angular (Pages) 🖥️📄
+## Páginas en Angular (Pages) 🖥️📄
   
   Se refiere a la manera en que puedes separar las **vistas/páginas que puedan existir en nuestro aplicativo**, pensadas para renderizar dentro de ellas componentes</br>
   > Ejemplos: [Login, Home, Dashboard, ...]
@@ -20,6 +20,20 @@ Aplicativo/Proyecto de una Agenda Digital en Angular
   <strong><code>ng g c pages/&lt;nombre_de_la_pagina&gt;</code></strong> <br/></br>
    * [Pages](src/app/pages) > Durante el proyecto utilizamos esta ubicación para colocar cada una de nuestras vistas en el aplicativo de Agendular </br></br>
   > Algo importante es mencionar que en realidad una "página" es un componente (@Component), y que solo se esta utilizando esta estrategia para identificarlo como un componente pero que se comporta como una [página](#páginas-en-angular-pages-%EF%B8%8F)
+
+## Ciclo de Vida de Componente 📦📄
+
+**Eventos que van sucediendo durante la vida del componente, permiten ejecutar código**. Aquí mencionaré algunos:
+
+- `constructor()`. Función/Bloque se encarga de crear la instancia del componente
+- `ngOnChanges`. Sucede al inicio y queda escuchando cada @Input
+- `ngOnInit`. Sucede antes del render (puede ser asíncrono), corre sola una vez
+- `ngAfterViewInit`. Sucede después del render
+- `ngDestroy`. Sucede cuando el componente va a desaparecer del render, aquí se pueden limpiar eventos que pueden quedar despiertos
+
+Puedes encontrar más en la documentación de Angular
+
+## Decoradores y Modelos de Angular
 
 ### Componentes en Angular (Components) 📦📄
 
@@ -115,17 +129,6 @@ Aplicativo/Proyecto de una Agenda Digital en Angular
   * [Ejemplo de Output de Agendular](src/app/components/active-daily-card/active-daily-card.component.ts) > Línea 31
   * [Ejemplo de Output de Agendular](src/app/pages/daily/daily.component.html) > Línea 2
 
-### Ciclo de Vida de Componente 📦📄
-
-**Eventos que van sucediendo durante la vida del componente, permiten ejecutar código**. Aquí mencionaré algunos:
-
-- `constructor()`. Función/Bloque se encarga de crear la instancia del componente
-- `ngOnChanges`. Sucede al inicio y queda escuchando cada @Input
-- `ngOnInit`. Sucede antes del render (puede ser asíncrono), corre sola una vez
-- `ngAfterViewInit`. Sucede después del render
-- `ngDestroy`. Sucede cuando el componente va a desaparecer del render, aquí se pueden limpiar eventos que pueden quedar despiertos
-
-Puedes encontrar más en la documentación de Angular
 
 ### Servicios en Angular (Decorador @Injectable)
 
@@ -228,7 +231,7 @@ export class CustonDirective {
 }
 ```
 
-### Manejo del Estado (Reactividad) (rxjs)
+## Manejo del Estado (Reactividad) (rxjs)
 
 **Mecanismo para manejar eventos, peticiones, HTTP y otras operaciones asíncronas de manera más eficiente y declarativa**. Por medio de 
 "observables" representan una secuencia de eventos o valores en el tiempo, es decir, **es un estado global compartido entre 
@@ -264,7 +267,7 @@ La librería `rxjs` es una herramienta que viene en conjunto con Angular y permi
   * [Ejemplo de Servicio con Reactividad](src/app/services/dailies.service.ts) > Línea 23
   * [Ejemplo del Uso del Observable](src/app/components/active-daily-card/active-daily-card.component.ts) > Línea 30
 
-# Módulo HTTPClient de Angular
+## Módulo HTTPClient de Angular
 
 Módulo que puedes activar/importar en Angular, **simplifica la realización de solicitudes HTTP en Angular** y proporciona características como la manipulación de observables para gestionar respuestas asíncronas.
 
@@ -278,7 +281,7 @@ Pasos para activarlo y utilizarlo
 4. Utilizar el observable del servicio
   * [Ejemplo en Agedular](src/app/pages/quotes/quotes.component.ts) -> Línea 15
 
-# Módulo ReactiveFormsModule de Angular
+## Módulo ReactiveFormsModule de Angular
 
 Módulo que puedes activar/importar en Angular, **simplifica el manejo de formularios en Angular al proporcionar un enfoque más reactivo** y permitir una fácil implementación de validaciones y seguimiento de cambios.
 
