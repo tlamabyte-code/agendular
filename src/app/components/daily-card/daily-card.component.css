@@ -7,6 +7,7 @@
   overflow: hidden;
   border-radius: 5px;
   grid-template-rows: auto 2fr auto;
+  grid-template-columns: repeat(auto-fill, minmax(1fr));
   cursor: pointer;
 }
 
@@ -23,9 +24,16 @@
 
 .daily-card .resume {
   display: grid;
-  grid-template-rows: auto;
   border: 1px solid gray;
   margin-top: 5px;
   margin-bottom: 5px;
   padding: 20px;
+  text-overflow: ellipsis;
+}
+
+.daily-card .resume p {
+  font-size: 1.6rem;
+  margin: 0;
+  overflow-wrap: break-word;
+  word-break: break-all;
 }

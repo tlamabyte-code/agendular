@@ -31,19 +31,12 @@ export class ActiveDailyCardComponent implements OnInit {
       // this.noteField!.valueChanges.subscribe((value) => {
       //   console.log(value)
       // })
-
-
-      this.dailiesService.todayDaily$.subscribe(newDaily =>
-        this.todayDaily = newDaily
-      )
-
-
   }
 
   private buildForm() {
     this.formDaily = this.formBuilder.group({
       emotion: ['', [Validators.required]],
-      note: ['', [Validators.required, Validators.minLength(45), Validators.maxLength(85)]],
+      note: ['', [Validators.required, Validators.minLength(15), Validators.maxLength(150)]],
       date: [this.today.toString()]
     })
   }
