@@ -292,5 +292,3 @@ Módulo que puedes activar/importar en Angular, **simplifica el manejo de formul
     * Revisar el uso de `FormGroup`
     * Revisar el uso de `FormBuilder`   
   * [Ejemplo en Agendular](src/app/components/active-daily-card/active-daily-card.component.html)   
-
-# Sesi�ón 5
