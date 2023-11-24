@@ -1,5 +1,12 @@
 export interface Daily {
-  date: string,
+  date?: number,
   emotion: string,
-  note: string
+  note: string,
+  color: string
+}
+
+export interface NewDaily {
+  emotion: string,
+  note: string,
+  color: string
 }

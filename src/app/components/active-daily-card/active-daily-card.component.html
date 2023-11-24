@@ -1,4 +1,4 @@
-<div class="active-daily">
+<div class="active-daily" [style.backgroundColor]="colorField?.value">
   <form [formGroup]="formDaily" (ngSubmit)="saveDaily()">
     <div class="header">
       <div class="emotion">
@@ -15,7 +15,8 @@
         </ng-template>
       </div>
       <div class="date">
-        {{ formDaily.get("date")?.value | date: 'short' }} {{ formDaily.get("emotion")?.value }}
+        <input type="color" formControlName="color"/>
+        {{ today | date: 'short' }} {{ formDaily.get("emotion")?.value }}
       </div>
     </div>
 
