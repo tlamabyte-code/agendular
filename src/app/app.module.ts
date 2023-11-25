@@ -5,13 +5,11 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DailyComponent } from './pages/daily/daily.component';
+import { DailyComponent } from './pages/dailies/dailies.component';
 import { ActiveDailyCardComponent } from './components/active-daily-card/active-daily-card.component';
 import { DailyCardComponent } from './components/daily-card/daily-card.component';
 import { CalculoHorasPipe } from './pipes/calculo-horas.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
-import { PendingComponent } from './pages/pending/pending.component';
-import { QuotesComponent } from './pages/quotes/quotes.component';
 
 @NgModule({
   declarations: [
@@ -20,9 +18,7 @@ import { QuotesComponent } from './pages/quotes/quotes.component';
     ActiveDailyCardComponent,
     DailyCardComponent,
     CalculoHorasPipe,
-    HighlightDirective,
-    PendingComponent,
-    QuotesComponent
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

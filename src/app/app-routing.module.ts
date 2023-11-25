@@ -1,26 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DailyComponent } from './pages/daily/daily.component';
-import { PendingComponent } from './pages/pending/pending.component';
-import { QuotesComponent } from './pages/quotes/quotes.component';
+import { DailyComponent } from './pages/dailies/dailies.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'daily',
+    redirectTo: '/dailies',
     pathMatch: 'full'
   },
   {
-    path: 'daily',
+    path: 'dailies',
     component: DailyComponent
-  },
-  {
-    path: 'pending',
-    component: PendingComponent
-  },
-  {
-    path: 'quotes',
-    component: QuotesComponent
   }
 ];
 

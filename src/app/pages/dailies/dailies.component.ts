@@ -3,9 +3,9 @@ import { Daily } from 'src/app/models/daily.model';
 import { DailiesService } from 'src/app/services/dailies.service';
 
 @Component({
-  selector: 'app-daily',
-  templateUrl: './daily.component.html',
-  styleUrls: ['./daily.component.css']
+  selector: 'app-dailies',
+  templateUrl: './dailies.component.html',
+  styleUrls: ['./dailies.component.css']
 })
 export class DailyComponent {
   myDailies: Daily[] = []
