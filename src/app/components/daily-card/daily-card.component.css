@@ -1,17 +1,20 @@
 .daily-card {
   display: grid;
-  background-color: rgba(223, 162, 83, 0.9);
+  opacity: 0.9;
+  color: var(--gainsboro);
   min-height: 150px;
   height: 25vh;
   padding: 5px;
   overflow: hidden;
   border-radius: 5px;
   grid-template-rows: auto 2fr auto;
+  grid-template-columns: repeat(auto-fill, minmax(1fr));
   cursor: pointer;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .daily-card:focus {
-    border: 1px solid orangered;
+    border: 4px solid orangered;
 }
 
 .daily-card .header {
@@ -23,9 +26,18 @@
 
 .daily-card .resume {
   display: grid;
-  grid-template-rows: auto;
   border: 1px solid gray;
   margin-top: 5px;
   margin-bottom: 5px;
   padding: 20px;
+  text-overflow: ellipsis;
+}
+
+.daily-card .resume p {
+  font-size: 1.3rem;
+  margin: 0;
+  white-space: wrap;
+  line-break: anywhere;
+  word-break: break-all;
+  overflow: hidden;
 }

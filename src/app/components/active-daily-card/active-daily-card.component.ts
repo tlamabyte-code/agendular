@@ -6,6 +6,7 @@ import {
   MinLengthValidator,
 } from '@angular/forms';
 import { Daily } from 'src/app/models/daily.model';
+import { ClockService } from 'src/app/services/clock.service';
 import { DailiesService } from 'src/app/services/dailies.service';
 import { emotionsCollection } from 'src/utils/constants';
 
@@ -15,7 +16,7 @@ import { emotionsCollection } from 'src/utils/constants';
   styleUrls: ['./active-daily-card.component.css'],
 })
 export class ActiveDailyCardComponent implements OnInit {
-  today: Date = new Date();
+  clockNow = new Date();
   formDaily!: FormGroup;
   emotionsCollection = emotionsCollection;
   isLight: boolean = false;
@@ -24,7 +25,8 @@ export class ActiveDailyCardComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private dailiesService: DailiesService
+    private dailiesService: DailiesService,
+    private clockService: ClockService
   ) {
     this.buildForm();
   }
@@ -33,6 +35,10 @@ export class ActiveDailyCardComponent implements OnInit {
     this.colorField!.valueChanges.subscribe((value) => {
       this.isColorLight(value);
     });
+
+    this.clockService.getClock().subscribe((clockNow: Date) => {
+      this.clockNow = clockNow
+    })
   }
 
   private buildForm() {
@@ -80,7 +86,6 @@ export class ActiveDailyCardComponent implements OnInit {
 
     const rgb = hexToRgb(color);
     const luminance = 0.299 * rgb.r + 0.587 * rgb.g + 0.114 * rgb.b;
-    console.log("luminance", luminance)
 
     // Checar si el color es muy claro
     if (luminance > 30) {
@@ -101,6 +106,6 @@ export class ActiveDailyCardComponent implements OnInit {
   }
 
   saveDaily() {
-    return
+    this.savedDaily.emit(this.formDaily.value as Daily)
   }
 }

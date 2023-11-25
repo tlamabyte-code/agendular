@@ -10,9 +10,6 @@ export class DailiesService {
   // private myDailies: Daily[] = []
   private dailies = new BehaviorSubject<Daily[]>([])
 
-  // Retiene la data "reactiva": BehaviorSubject
-  private todayDaily = new BehaviorSubject<boolean>(false)
-
   // Observables
   dailies$ = this.dailies.asObservable()
 

@@ -1,0 +1,55 @@
+nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "📖 📌 🎲 clock";
+  background-color: var(--darker-blackblue-90);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  align-items: center;
+}
+
+nav .links {
+  display: flex;
+}
+
+nav .links a {
+  display: inline-block;
+  color: var(--gainsboro);
+  background-color: var(--transparent);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+nav .links a.active {
+  background-color: var(--light-green-95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow:
+    1px 1px 0 var(--black), /* Bottom right */
+    -1px -1px 0 var(--black), /* Top left */
+    1px -1px 0 var(--black), /* Top right */
+    -1px 1px 0 var(--black); /* Bottom left */
+}
+
+nav .clock {
+  grid-area: clock;
+  justify-self: end;
+  margin-right: 16px;
+}
+
+nav .clock span {
+  color: var(--gainsboro);
+  font-size: 20px;
+}
+
+/* medium-devices and large-devices (tablets) */
+@media screen and (min-width: 40em) {
+  nav {
+    width: 50%; /* Adjust the width as needed */
+    left: 25%; /* Center the nav horizontally */
+  }
+}

@@ -1,16 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import url('src/styles/reset.css');
+@import url('src/styles/colors.css');
 
 * {
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: var(--transparent);
 }
 
 body {
-  margin: 10px;
-  background-color: #fffbf1;
+  min-height: 90vh;
+  background-color: var(--white-paper);
   opacity: 1;
-  background-image:  radial-gradient(#131313 1.75px, transparent 1.75px), radial-gradient(#131313 1.75px, #fffbf1 1.75px);
+  background-image:  radial-gradient(var(--black) 1.75px, transparent 1.75px), radial-gradient(var(--black) 1.75px, var(--white-paper) 1.75px);
   background-size: 70px 70px;
   background-position: 0 0,35px 35px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;

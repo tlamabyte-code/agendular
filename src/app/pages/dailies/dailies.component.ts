@@ -4,10 +4,10 @@ import { DailiesService } from 'src/app/services/dailies.service';
 
 @Component({
   selector: 'app-daily',
-  templateUrl: './daily.component.html',
-  styleUrls: ['./daily.component.css']
+  templateUrl: './dailies.component.html',
+  styleUrls: ['./dailies.component.css']
 })
-export class DailyComponent implements OnInit {
+export class DailiesComponent implements OnInit {
   myDailies: Daily[] = []
 
   constructor(private dailiesService: DailiesService) {

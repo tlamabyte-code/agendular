@@ -1,26 +1,36 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DailyComponent } from './pages/daily/daily.component';
-import { PendingComponent } from './pages/pending/pending.component';
-import { QuotesComponent } from './pages/quotes/quotes.component';
+import { DailiesComponent } from './pages/dailies/dailies.component';
+import { TasksComponent } from './pages/tasks/tasks.component';
+import { PlaygroundComponent } from './pages/playground/playground.component';
+import { NotfoundRouteComponent } from './components/notfound-route/notfound-route.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'daily',
+    redirectTo: '/dailies',
     pathMatch: 'full'
   },
   {
-    path: 'daily',
-    component: DailyComponent
+    path: 'dailies',
+    component: DailiesComponent
   },
   {
-    path: 'pending',
-    component: PendingComponent
+    path: 'tasks',
+    component: TasksComponent
   },
   {
-    path: 'quotes',
-    component: QuotesComponent
+    path: 'playground',
+    component: PlaygroundComponent
+  },
+  {
+    path: 'playground/:activity',
+    component: PlaygroundComponent
+  },
+  {
+    // Not found **
+    path: "**",
+    component: NotfoundRouteComponent
   }
 ];
 

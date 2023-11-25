@@ -1,11 +1,11 @@
-<div class="daily-card">
+<div class="daily-card" [style.backgroundColor]="daily.color">
   <div class="header">
     <span>{{ daily.emotion }}</span>
     <span>{{ daily.date | date: 'short' }}</span>
   </div>
   <div class="resume">
     <p>
-      {{ daily.note }}
+      {{ daily.note | shortNote }}
     </p>
   </div>
 </div>

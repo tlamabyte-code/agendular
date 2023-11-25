@@ -1,0 +1,12 @@
+:root {
+  --darker-blackblue-90: rgba(1, 17, 17, 0.9);
+  --lighter-gray-65: rgba(255,255,255,0.65);
+  --light-green-95: rgba(20, 139, 56, 0.95);
+  --white-paper: rgb(255, 251, 240);
+  --white: white;
+  --gray: gray;
+  --transparent: transparent;
+  --gainsboro: gainsboro;
+  --black: black;
+  --mexican-pink: rgb(230, 0, 126);
+}

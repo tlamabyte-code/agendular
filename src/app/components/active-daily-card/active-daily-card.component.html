@@ -15,8 +15,8 @@
         </ng-template>
       </div>
       <div class="date">
+        {{ clockNow | date: 'short' }} {{ formDaily.get("emotion")?.value }}
         <input type="color" formControlName="color"/>
-        {{ today | date: 'short' }} {{ formDaily.get("emotion")?.value }}
       </div>
     </div>
 
