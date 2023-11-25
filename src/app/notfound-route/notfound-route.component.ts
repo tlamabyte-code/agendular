@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './notfound-route.component.html',
   styleUrls: ['./notfound-route.component.css'],
 })
-export class NotfoundRouteComponent implements OnInit {
+export class NotFoundRouteComponent implements OnInit {
   currentPath = '';
 
   constructor(private route: ActivatedRoute) {}

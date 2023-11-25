@@ -3,7 +3,7 @@ import { Daily } from 'src/app/models/daily.model';
 import { DailiesService } from 'src/app/services/dailies.service';
 
 @Component({
-  selector: 'app-daily',
+  selector: 'app-dailies',
   templateUrl: './dailies.component.html',
   styleUrls: ['./dailies.component.css']
 })
