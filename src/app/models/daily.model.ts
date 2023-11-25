@@ -1,5 +1,10 @@
 export interface Daily {
-  date: string,
+  id: number,
+  note: string,
   emotion: string,
-  note: string
+  color: string,
+  timestamp: number
 }
+
+export interface NewDaily extends Omit<Daily, 'id' | 'timestamp'> { }
+

@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, MinLengthValidator } from '@angular/forms';
-import { Daily } from 'src/app/models/daily.model';
+import { Daily, NewDaily } from 'src/app/models/daily.model';
+import { ClockService } from 'src/app/services/clock.service';
 import { DailiesService } from 'src/app/services/dailies.service';
 import { emotionsCollection } from 'src/utils/constants'
 
@@ -11,19 +12,18 @@ import { emotionsCollection } from 'src/utils/constants'
 })
 export class ActiveDailyCardComponent implements OnInit {
 
+  clockNow = new Date()
+
   today: Date = new Date()
   formDaily!: FormGroup
   emotionsCollection = emotionsCollection
 
-  todayDaily: Daily = {
-    date: '',
-    emotion: '',
-    note: ''
-  }
-
   @Output('nuevoDaily') savedDaily = new EventEmitter<Daily>()
 
-  constructor(private formBuilder: FormBuilder, private dailiesService: DailiesService) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private dailiesService: DailiesService,
+    private clockService: ClockService) {
     this.buildForm()
   }
 
@@ -31,13 +31,21 @@ export class ActiveDailyCardComponent implements OnInit {
       // this.noteField!.valueChanges.subscribe((value) => {
       //   console.log(value)
       // })
+
+      this.colorField!.valueChanges.subscribe((value) => {
+        this.isColorLight(value)
+      })
+
+      this.clockService.getClock().subscribe((clockNow: Date) => {
+        this.clockNow = clockNow
+      })
   }
 
   private buildForm() {
     this.formDaily = this.formBuilder.group({
       emotion: ['', [Validators.required]],
-      note: ['', [Validators.required, Validators.minLength(15), Validators.maxLength(150)]],
-      date: [this.today.toString()]
+      note: ['', [Validators.required, Validators.minLength(15), Validators.maxLength(350)]],
+      color: ['#03331f']
     })
   }
 
@@ -49,8 +57,8 @@ export class ActiveDailyCardComponent implements OnInit {
     return this.formDaily.get('emotion')
   }
 
-  get dateField() {
-    return this.formDaily.get("date")
+  get colorField() {
+    return this.formDaily.get("color")
   }
 
   checkEmotion(): boolean {
@@ -61,13 +69,38 @@ export class ActiveDailyCardComponent implements OnInit {
     this.emotionField?.setValue('')
   }
 
-  saveDaily() {
+  private isColorLight(color: string): void {
+    // Convert hexadecimal color to RGB
+    const hexToRgb = (hex: string) => {
+      const bigint = parseInt(hex.slice(1), 16);
+      const r = (bigint >> 16) & 255;
+      const g = (bigint >> 8) & 255;
+      const b = bigint & 255;
+      return { r, g, b };
+    };
 
-    if (this.todayDaily.date === this.today.toString()) {
-      alert("Ya subiste Daily")
-    } else {
-      this.savedDaily.emit(this.formDaily.value as Daily)
+    // Calculate luminance
+
+    const rgb = hexToRgb(color);
+    const luminance = 0.299 * rgb.r + 0.587 * rgb.g + 0.114 * rgb.b;
+
+    // Checar si el color es muy claro
+    if (luminance > 30) {
+      const darkerR = Math.max(0, Math.round(rgb.r * (1 - 0.1)));
+      const darkerG = Math.max(0, Math.round(rgb.g * (1 - 0.1)));
+      const darkerB = Math.max(0, Math.round(rgb.b * (1 - 0.1)));
+
+      // #00ff11
+      this.colorField?.setValue(`#${(1 << 24 | darkerR << 16 | darkerG << 8 | darkerB).toString(16).slice(1)}`)
     }
+  }
+
+  saveDaily() {
+    this.dailiesService.create(this.formDaily.value as NewDaily)
+    .subscribe((data) => {
+      console.log('data', data)
+      // this.savedDaily.emit(data as Daily)
+    })
 
   }
 

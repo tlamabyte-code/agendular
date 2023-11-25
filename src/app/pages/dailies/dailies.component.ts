@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Daily } from 'src/app/models/daily.model';
 import { DailiesService } from 'src/app/services/dailies.service';
 
@@ -7,14 +7,22 @@ import { DailiesService } from 'src/app/services/dailies.service';
   templateUrl: './dailies.component.html',
   styleUrls: ['./dailies.component.css']
 })
-export class DailyComponent {
+export class DailyComponent implements OnInit {
   myDailies: Daily[] = []
 
   constructor(private dailiesService: DailiesService) {
-    this.myDailies = this.dailiesService.getDailies()
+
+  }
+
+  ngOnInit(): void {
+      this.dailiesService.getDailies()
+      .subscribe(data => {
+        this.dailiesService.setDailies(data)
+      })
+
+      this.dailiesService.dailies$.subscribe(dailies => this.myDailies = dailies)
   }
 
   handlerCompletedDaily(daily: Daily): void {
-    this.dailiesService.addDaily(daily)
   }
 }

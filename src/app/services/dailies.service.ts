@@ -1,21 +1,30 @@
 import { Injectable } from '@angular/core';
-import { Daily } from '../models/daily.model';
+import { Daily, NewDaily } from '../models/daily.model';
 import { BehaviorSubject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DailiesService {
-  private myDailies: Daily[] = []
+  private endpointURL = "http://localhost:3000/api/v1/dailies"
 
-  constructor() { }
+  private dailies = new BehaviorSubject<Daily[]>([])
+
+  dailies$ = this.dailies.asObservable()
+
+  constructor(private http: HttpClient) { }
 
   getDailies() {
-    return this.myDailies
+    return this.http.get<Daily[]>(this.endpointURL)
   }
 
-  addDaily(daily: Daily): void {
-    this.myDailies.unshift(daily)
+  create(daily: NewDaily) {
+    return this.http.post<NewDaily>(this.endpointURL, daily)
+  }
+
+  setDailies(dailies: Daily[]) {
+    this.dailies.next(dailies)
   }
 
 }

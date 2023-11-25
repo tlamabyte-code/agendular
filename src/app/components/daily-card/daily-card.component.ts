@@ -8,8 +8,10 @@ import { Daily } from 'src/app/models/daily.model';
 })
 export class DailyCardComponent {
   @Input('estatusDelDia') daily: Daily = {
-    date: '',
+    id: 0,
     emotion: '',
-    note: ''
+    note: '',
+    color: '',
+    timestamp: (new Date().getTime()/1000)
   }
 }
