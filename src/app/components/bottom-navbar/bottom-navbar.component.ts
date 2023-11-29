@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
+
 import { ClockService } from 'src/app/services/clock.service';
 
 @Component({
@@ -9,6 +11,7 @@ import { ClockService } from 'src/app/services/clock.service';
 export class BottomNavbarComponent implements OnInit {
 
   clockNow = new Date()
+  appVersion = environment.app_version
 
   constructor(private clockService: ClockService) {
 
