@@ -37,13 +37,20 @@ nav .links a.active {
 
 nav .clock {
   grid-area: clock;
+  display: flex;
+  flex-direction: column;
   justify-self: end;
   margin-right: 10px;
+  color: var(--gainsboro);
 }
 
-nav .clock span {
-  color: var(--gainsboro);
+nav .clock span:first-child {
   font-size: 20px;
+}
+
+nav .clock span:last-child {
+  font-size: 0.7rem;
+  text-align: right;
 }
 
 /* medium-devices and large-devices (tablets) */
