@@ -13,6 +13,7 @@ export class BottomNavbarComponent implements OnInit {
   clockNow = new Date()
   appVersion = environment.app_version
 
+
   constructor(private clockService: ClockService) {
 
   }
