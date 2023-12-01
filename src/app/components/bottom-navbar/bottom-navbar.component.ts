@@ -11,7 +11,7 @@ import { ClockService } from 'src/app/services/clock.service';
 export class BottomNavbarComponent implements OnInit {
 
   clockNow = new Date()
-  appVersion = environment.app_version
+  appVersion = environment.appVersion
 
 
   constructor(private clockService: ClockService) {
