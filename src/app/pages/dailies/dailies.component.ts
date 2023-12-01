@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Daily } from 'src/app/models/daily.model';
 import { DailiesService } from 'src/app/services/dailies.service';
 
+
 @Component({
   selector: 'app-dailies',
   templateUrl: './dailies.component.html',
@@ -9,6 +10,8 @@ import { DailiesService } from 'src/app/services/dailies.service';
 })
 export class DailyComponent implements OnInit {
   myDailies: Daily[] = []
+
+
 
   constructor(private dailiesService: DailiesService) {
 
@@ -21,6 +24,8 @@ export class DailyComponent implements OnInit {
       })
 
       this.dailiesService.dailies$.subscribe(dailies => this.myDailies = dailies)
+
+
   }
 
   handlerCompletedDaily(daily: Daily): void {
