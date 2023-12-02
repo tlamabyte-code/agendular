@@ -10,6 +10,7 @@ import { environment } from 'src/environments/environment';
 export class DailiesService {
   private endpointURL = `${environment.apiURL}/dailies`;
   private secretKey = environment.secretKey;
+  // private secretProcessKey = process.env['SECRET_KEY'];
 
   private dailies = new BehaviorSubject<Daily[]>([]);
 
@@ -34,6 +35,6 @@ export class DailiesService {
   }
 
   getSecretProcessKey(): string | undefined {
-    return this.secretProcessKey;
+    return this.secretKey;
   }
 }
