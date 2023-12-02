@@ -43,3 +43,5 @@ Thumbs.db
 
 # Course files
 COURSE.md
+.env
+.vercel/
