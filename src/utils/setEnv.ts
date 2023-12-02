@@ -24,6 +24,7 @@ const setEnv = () => {
   const envConfigFile = `export const environment = {
   secretKey: '${process.env.SECRET_KEY}',
   appVersion: '${appVersion}',
+  apiURL: '${process.env.API_URL}',
   production: true,
 };
 `;

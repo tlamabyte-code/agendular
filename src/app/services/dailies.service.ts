@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class DailiesService {
-  private endpointURL = 'http://localhost:3000/api/v1/dailies';
+  private endpointURL = `${environment.apiURL}/dailies`;
   private secretKey = environment.secretKey;
   private secretProcessKey = process.env['SECRET_KEY'];
 
